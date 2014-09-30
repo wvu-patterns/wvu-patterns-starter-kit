@@ -1,0 +1,28 @@
+{
+  "name": "wvu-patterns-starter-kit",
+  "version": "0.0.1",
+  "authors": [
+    "Steven Spriggs <steven.spriggs@gmail.com>"
+  ],
+  "description": "WVU Pattern Library - Starter Kit",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "wvu",
+    "west virginia university",
+    "css",
+    "scss"
+  ],
+  "main": [
+    "./bower.json"
+  ],
+  "dependencies": {
+    "wvu-patterns-masthead": "0.0.1"
+  }
+}
