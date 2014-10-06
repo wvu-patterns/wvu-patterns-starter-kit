@@ -23,7 +23,7 @@
     "_wvu-starter-kit.scss"
   ],
   "dependencies": {
-    "normalize-scss": "3.0.1"
+    "normalize-scss": "3.0.1",
     "wvu-patterns-masthead": "0.0.4",
     "wvu-patterns-footer": "0.0.2"
   }
