@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-starter-kit",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "authors": [
     "Steven Spriggs <steven.spriggs@gmail.com>"
   ],
@@ -24,6 +24,7 @@
   ],
   "dependencies": {
     "normalize-scss": "3.0.1",
+    "wvu-patterns-box-sizing": "0.0.1",
     "wvu-patterns-masthead": "0.0.5",
     "wvu-patterns-footer": "0.0.2"
   }
