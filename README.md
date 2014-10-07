@@ -9,7 +9,6 @@ The wvu-patterns-starter-kit ties together the main patterns used in a base line
 ##Upcoming Addons
 A list of default utilities/packages that will be added to wvu-patterns-starter-kit.
 
-* _box-sizing.scss - using Bower
 * _wvu-typography.scss - based on modular scale / gridlover
 * _wvu-responsive-images.scss - allows all images to scale 100% to parent container
 * _wvu-helpers.scss - helper classes from HTML5 Boilerplate
