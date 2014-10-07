@@ -6,7 +6,18 @@ $ bower install --save wvu-patterns-starter-kit
 
 The wvu-patterns-starter-kit ties together the main patterns used in a base line WVU design.
 
-##Upcoming Addons
+##Supported 3rd Party Utilities
+* Normalize - https://github.com/appleboy/normalize.scss
+* Clearfix - https://github.com/inuitcss/trumps.clearfix
+
+##Supported Utilities
+* Box Sizing - https://github.com/wvu-patterns/wvu-utilities-box-sizing
+
+##Supported Patterns
+* WVU Masthead - https://github.com/wvu-patterns/wvu-patterns-masthead
+* WVU Footer - https://github.com/wvu-patterns/wvu-patterns-footer
+
+##Upcoming Patterns & Utilities
 A list of default utilities/packages that will be added to wvu-patterns-starter-kit.
 
 * _wvu-typography.scss - based on modular scale / gridlover
