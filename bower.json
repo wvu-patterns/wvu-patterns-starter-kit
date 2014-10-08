@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-starter-kit",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "authors": [
     "Steven Spriggs <steven.spriggs@gmail.com>"
   ],
@@ -27,6 +27,6 @@
     "inuit-clearfix": "0.2.1",
     "wvu-utilities-box-sizing": "0.0.1",
     "wvu-patterns-masthead": "0.0.6",
-    "wvu-patterns-footer": "0.0.3"
+    "wvu-patterns-footer": "0.0.4"
   }
 }
