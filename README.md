@@ -1,5 +1,7 @@
 # WVU Pattern Library Starter Kit
 
+[![Build Status](https://travis-ci.org/wvu-patterns/wvu-patterns-starter-kit.svg?branch=master)](https://travis-ci.org/wvu-patterns/wvu-patterns-starter-kit)
+
 Use [Bower](http://bower.io/) to install this module.
 
 ```bash
