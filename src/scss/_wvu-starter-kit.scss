@@ -1,0 +1,13 @@
+// Import 3rd party dependencies
+@import './bower_components/normalize-scss/_normalize';
+@import './bower_components/inuit-clearfix/_trumps.clearfix';
+
+// Import all utility dependencies
+@import './bower_components/wvu-utilities-box-sizing/src/scss/_wvu-box-sizing';
+
+// Import all pattern dependencies
+@import './bower_components/wvu-patterns-masthead/src/scss/_wvu-masthead';
+@import './bower_components/wvu-patterns-masthead-logo/src/scss/_wvu-masthead__logo';
+@import './bower_components/wvu-patterns-masthead-links/src/scss/_wvu-masthead__links';
+@import './bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links';
+@import './bower_components/wvu-patterns-footer-credits/src/scss/_wvu-footer__credits';

@@ -1,5 +1,7 @@
 # WVU Pattern Library Starter Kit
 
+Use [Bower](http://bower.io/) to install this module.
+
 ```bash
 $ bower install --save wvu-patterns-starter-kit
 ```
@@ -28,3 +30,26 @@ A list of default utilities/packages that will be added to wvu-patterns-starter-
 * _variables.scss - any other global variables that we may need... (not sure we need this yet, open for debate).
 
 __REMINDER:__ Make sure to use !Default for styles that can or should be modified by the user.
+
+
+###Pattern Development
+
+Requires:
+
+* Ruby 1.9.3-p484
+* NodeJS
+* Gulp
+
+*RVM is Preferred* but not required
+
+####Installation
+
+* `cd {install-dir}/wvu-patterns-footer-links`
+* `gem install bundler`
+* `bundle install`
+* `npm install`
+
+####Pattern Testing
+
+* `gulp test` will create a build directory so you can view pattern
+* `gulp ci` will run lint test to make sure .scss file is valid
