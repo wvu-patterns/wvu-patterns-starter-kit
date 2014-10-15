@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-starter-kit",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "authors": [
     "Steven Spriggs <steven.spriggs@gmail.com>"
   ],
@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "normalize-scss": "3.0.1",
-    "inuit-clearfix": "0.2.1",
+    "sassy-gridlover": "https://github.com/zeroedin/Sassy-Gridlover.git#39ff56492eb4ba5f0a9d84db25cb63bb1d4098a4",
     "wvu-utilities-box-sizing": "latest",
     "wvu-patterns-masthead": "latest",
     "wvu-patterns-footer": "latest"

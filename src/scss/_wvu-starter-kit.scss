@@ -1,6 +1,9 @@
+// StarterKit Configuration Variables
+@import 'config/vertical-rhythm';  // Configuration Variables for Sassy-Gridlover Typographic Vertical Rhythm
+
 // Import 3rd party dependencies
 @import './bower_components/normalize-scss/_normalize';
-@import './bower_components/inuit-clearfix/_trumps.clearfix';
+@import './bower_components/sassy-gridlover/sassy-gridlover/sassy-gridlover';
 
 // Import all utility dependencies
 @import './bower_components/wvu-utilities-box-sizing/src/scss/_wvu-box-sizing';
@@ -9,5 +12,6 @@
 @import './bower_components/wvu-patterns-masthead/src/scss/_wvu-masthead';
 @import './bower_components/wvu-patterns-masthead-logo/src/scss/_wvu-masthead__logo';
 @import './bower_components/wvu-patterns-masthead-links/src/scss/_wvu-masthead__links';
+@import './bower_components/wvu-patterns-footer/src/scss/_wvu-footer';
 @import './bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links';
 @import './bower_components/wvu-patterns-footer-credits/src/scss/_wvu-footer__credits';

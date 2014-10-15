@@ -29,7 +29,12 @@ gulp.task('scss-lint', function() {
     .pipe(scsslint.failReporter());
 });
 
-gulp.task('rename-scss-partial',function(){
+gulp.task('move-scss-config', function(){
+  return gulp.src('./src/scss/config/**/*.scss')
+    .pipe(gulp.dest('./build/scss/config'));
+})
+
+gulp.task('rename-scss-partial',['move-scss-config'], function(){
   return gulp.src('./src/scss/_wvu-starter-kit.scss')
     .pipe(rename('wvu-starter-kit.scss'))
     .pipe(gulp.dest('./build/scss/'));
