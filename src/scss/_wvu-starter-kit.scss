@@ -15,3 +15,7 @@
 @import './bower_components/wvu-patterns-footer/src/scss/_wvu-footer';
 @import './bower_components/wvu-patterns-footer-links/src/scss/_wvu-footer__links';
 @import './bower_components/wvu-patterns-footer-credits/src/scss/_wvu-footer__credits';
+
+body {
+  @include sassy-gridlover-body($sgl-baseFontSize, true);
+}

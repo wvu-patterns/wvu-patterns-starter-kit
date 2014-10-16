@@ -1,6 +1,6 @@
 {
   "name": "wvu-patterns-starter-kit",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "WVU Pattern Library - Starter Kit",
   "main": "gulpfile.js",
   "scripts": {
