@@ -24,7 +24,7 @@
   ],
   "dependencies": {
     "normalize-scss": "3.0.1",
-    "sassy-gridlover": "https://github.com/zeroedin/Sassy-Gridlover.git#04b5e9f4d1221e46f10096a1bf8e25b0df84b1be",
+    "sassy-gridlover": "1.1.0",
     "wvu-utilities-box-sizing": "latest",
     "wvu-patterns-masthead": "latest",
     "wvu-patterns-footer": "latest"
