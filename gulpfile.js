@@ -4,17 +4,12 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     prefix = require('gulp-autoprefixer'),
     rename = require('gulp-rename'),
-    inject = require("gulp-inject"),
     del = require("del"),
     runSequence = require('run-sequence'),
-    scsslint = require('gulp-scss-lint');
+    scsslint = require('gulp-scss-lint'),
+    handlebars = require('gulp-compile-handlebars'),
+    extend = require('gulp-extend');
 
-// Replaced with node del 
-// gulp.task('clean', function () {
-//   return gulp.src('./build/*', { read: false })
-//     .pipe(clean());
-// });
-// https://github.com/gulpjs/gulp/blob/master/docs/recipes/delete-files-folder.md
 gulp.task('clean', function(cb){
   del([
     'build/**'
@@ -29,19 +24,14 @@ gulp.task('scss-lint', function() {
     .pipe(scsslint.failReporter());
 });
 
-gulp.task('move-scss-config', function(){
-  return gulp.src('./src/scss/config/**/*.scss')
-    .pipe(gulp.dest('./build/scss/config'));
-})
-
-gulp.task('rename-scss-partial',['move-scss-config'], function(){
-  return gulp.src('./src/scss/_wvu-starter-kit.scss')
-    .pipe(rename('wvu-starter-kit.scss'))
-    .pipe(gulp.dest('./build/scss/'));
-});
-
-gulp.task('compile-css', ['rename-scss-partial'], function(){
-  return gulp.src('./build/scss/*.scss')
+gulp.task('compile-scss', function(){
+  return gulp.src([
+      './bower_components/wvu-**/src/scss/*.scss',
+      './src/scss/*.scss'
+    ])
+    .pipe(rename(function (path) {
+      path.basename = path.basename.substring(1);
+    }))
     .pipe(sass({
       includePaths: ['scss'],
       outputStyle: 'expanded'
@@ -50,75 +40,38 @@ gulp.task('compile-css', ['rename-scss-partial'], function(){
     .pipe(gulp.dest('./build/css/'));
 });
 
-gulp.task('copy-test-html',function(){
-  return gulp.src('./src/test/index.html')
-    .pipe(gulp.dest('./build/'))
+gulp.task('build-json',function(){
+  return gulp.src([
+    './src/handlebars/data/*.json',
+    './bower_components/wvu-****/src/handlebars/data/*.json',
+    ])
+  .pipe(extend('_wvu-starter-kit.json',true,2))
+  .pipe(gulp.dest("./build/data"));
 })
 
-gulp.task('inject-src', ['scss-lint','copy-test-html','compile-css'], function () {
-  var target = gulp.src('./build/index.html');
-  target.pipe(inject(gulp.src(['./build/css/*.css'], {read: false}), {relative: true}))
-    .pipe(gulp.dest('./build/'));
-    
-    target.pipe(inject(gulp.src(['./src/html/*.html']), {
-      starttag: '<!-- inject:html -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    
-    // WVU Masthead
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-masthead/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-masthead:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-masthead-logo/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-masthead__logo:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-masthead-links/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-masthead__links:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    
-    // WVU Footer
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-footer:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-credits/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-footer__credits:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    target.pipe(inject(gulp.src(['./bower_components/wvu-patterns-footer-links/src/html/*.html']), {
-      starttag: '<!-- inject:wvu-footer__links:{{ext}} -->',
-      transform: function (filePath, file) {
-        // return file contents as string
-        return file.contents.toString('utf8')
-      }
-    }))
-    
-    .pipe(gulp.dest('./build/'))
+gulp.task('compile', ['build-json','scss-lint','compile-scss'], function () {
+
+  var templateData = require('./build/data/_wvu-starter-kit.json');
+
+  var options = {
+    batch : [
+      './bower_components/wvu-patterns-masthead/src/handlebars',
+      './bower_components/wvu-patterns-masthead-logo/src/handlebars',
+      './bower_components/wvu-patterns-masthead-links/src/handlebars',
+      './bower_components/wvu-patterns-footer/src/handlebars',
+      './bower_components/wvu-patterns-footer-credits/src/handlebars',
+      './bower_components/wvu-patterns-footer-links/src/handlebars',
+      './src/handlebars'
+    ]
+  }
+  return gulp.src('./src/handlebars/test/index.hbs')
+        .pipe(handlebars(templateData, options))
+        .pipe(rename('index.html'))
+        .pipe(gulp.dest('./build'));
 });
 
 gulp.task('build',function(){
-  runSequence('clean','inject-src');
+  runSequence('clean','compile');
 });
 
 gulp.task('test',['build']);

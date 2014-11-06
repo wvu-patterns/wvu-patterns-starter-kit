@@ -1,0 +1,7 @@
+{
+  "_wvu-starter-kit": {
+    "css": [
+      { "src":"css/wvu-starter-kit.css" }
+    ]
+  }
+}
