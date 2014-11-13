@@ -26,7 +26,7 @@
     "normalize-scss": "3.0.1",
     "sassy-gridlover": "1.1.0",
     "wvu-utilities-box-sizing": "latest",
-    "wvu-patterns-masthead": "master",
-    "wvu-patterns-footer": "master"
+    "wvu-patterns-masthead": "latest",
+    "wvu-patterns-footer": "latest"
   }
 }
