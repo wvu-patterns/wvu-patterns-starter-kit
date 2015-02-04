@@ -1,26 +1,26 @@
 {
   "name": "wvu-patterns-starter-kit",
+  "homepage": "https://github.com/wvu-patterns/wvu-patterns-starter-kit",
   "version": "0.1.1",
-  "description": "WVU Pattern Library - Starter Kit",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "gulp ci"
-  },
   "repository": {
     "type": "git",
     "url": "https://zeroedin@github.com/wvu-patterns/wvu-patterns-starter-kit.git"
   },
+  "bugs": {
+    "url": "https://github.com/wvu-patterns/wvu-patterns-starter-kit/issues"
+  },
+  "author": "Steven Spriggs <steven.spriggs@mail.wvu.edu>",
   "keywords": [
     "wvu",
     "scss",
     "west virginia university"
   ],
-  "author": "Steven Spriggs <steven.spriggs@gmail.com>",
+  "description": "WVU Pattern Library - Starter Kit",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wvu-patterns/wvu-patterns-starter-kit/issues"
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp ci"
   },
-  "homepage": "https://github.com/wvu-patterns/wvu-patterns-starter-kit",
   "devDependencies": {
     "browser-sync": "^1.7.3",
     "del": "^0.1.3",

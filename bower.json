@@ -1,26 +1,29 @@
 {
   "name": "wvu-patterns-starter-kit",
+  "homepage": "https://github.com/wvu-patterns/wvu-patterns-starter-kit",
   "version": "0.1.1",
   "authors": [
-    "Steven Spriggs <steven.spriggs@gmail.com>"
-  ],
-  "description": "WVU Pattern Library - Starter Kit",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "Dustin Mazon <dustin.mazon@mail.wvu.edu>",
+    "Steven Spriggs <steven.spriggs@mail.wvu.edu>"
   ],
   "keywords": [
     "wvu",
     "west virginia university",
-    "css",
-    "scss"
+    "patterns"
   ],
+  "description": "WVU Pattern Library - Starter Kit",
+  "license": "MIT",
   "main": [
-    "_wvu-starter-kit.scss"
+    "src/scss/_wvu-starter-kit.scss",
+    "src/scss/config/_vertical-rhythm.scss"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "build",
+    "test",
+    "tests"
   ],
   "dependencies": {
     "normalize-scss": "3.0.1",
