@@ -1,15 +1,15 @@
 language: node_js
-
 node_js:
-  - "0.10"
-  - "0.11"
-  
+- '0.10'
+- '0.11'
 before_install:
-  - gem install bundler
-  - bundle install
-  - npm install -g bower
-  - npm install -g gulp
-  - bower install
-
+- gem install bundler
+- bundle install
+- npm install -g bower
+- npm install -g gulp
+- bower install
 script:
-  - gulp ci
+- gulp ci
+notifications:
+  slack:
+    secure: kcUMEbhnvG9hmPnbKrKihL3Kfd4Ri+pcw2BP41RTRH90iEeRuhs9dVBAcgsFCjO1ngmBsvLrtyyy57pUunQQpegHMGhuP3rscpIsQbDxAjlAC7lKzG+FuEpodAyI2MS+jMenX21JFXm/ka7afNRDh6WZQbHkCjNPzST+xiX7OwM=
